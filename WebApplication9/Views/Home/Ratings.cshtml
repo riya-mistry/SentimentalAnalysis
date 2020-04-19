@@ -1,0 +1,111 @@
+﻿@model WebApplication9ML.Model.ModelInput
+@{
+    ViewData["Title"] = "Ratings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var result = ViewBag.Result;
+}
+<div class="form-horizontal">
+
+    <hr />
+    <div class="container">
+        <h4>     @ViewBag.name @ViewBag.Rate</h4>
+        <img src="~/ProductImg/@ViewBag.image" />
+    </div>
+
+    @{
+        List<TblCustomerRatings> data = ViewBag.Comments;
+        int count = 0;
+    }
+    @{ 
+        Dictionary<int, string> member = ViewBag.users;
+    }
+    <div class="table-responsive">
+        <table class="table table-bordered bg-light" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>User</th>
+                    <th>Comment</th>
+                    <th>Rating</th>
+
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>User</th>
+                    <th>Comment</th>
+                    <th>Rating</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @if (data != null)
+                {
+                @foreach (var item in data)
+                {
+                    count = count + 1;
+
+                <tr>
+
+                    <td>@count</td>
+                    <td>@member[item.MemberId]</td>
+                    <td>@item.Comment</td>
+                    <td>
+                        @if (item.Rating > 3)
+                        {<i class="fa fa-arrow-up" style="color:green"></i>}
+                        else
+                        {
+                            <i class="fa fa-arrow-down" style="color:red"></i>
+                        }
+                    </td>
+
+
+
+                </tr>
+
+                }
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+
+    @using (Html.BeginForm("Ratings", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+
+    
+}
+    <div class="col-md-offset-4 col-md-4">
+        @if (result != null)
+        {
+            <h2>Result</h2>
+           
+            <h3>Score:@result.Score</h3>
+        }
+    </div>
+
+

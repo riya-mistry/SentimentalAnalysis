@@ -1,0 +1,9 @@
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\bin\Release\netstandard2.0\MLModel.zip
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\bin\Release\netstandard2.0\WebApplication9ML.Model.deps.json
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\bin\Release\netstandard2.0\WebApplication9ML.Model.dll
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\bin\Release\netstandard2.0\WebApplication9ML.Model.pdb
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\obj\Release\netstandard2.0\WebApplication9ML.Model.csprojAssemblyReference.cache
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\obj\Release\netstandard2.0\WebApplication9ML.Model.AssemblyInfoInputs.cache
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\obj\Release\netstandard2.0\WebApplication9ML.Model.AssemblyInfo.cs
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\obj\Release\netstandard2.0\WebApplication9ML.Model.dll
+C:\Users\lenovo\source\repos\WebApplication9\WebApplication9ML.Model\obj\Release\netstandard2.0\WebApplication9ML.Model.pdb

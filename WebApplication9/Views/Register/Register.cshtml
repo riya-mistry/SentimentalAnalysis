@@ -1,0 +1,59 @@
+﻿@model WebApplication9.Models.TblMembers
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register</h1>
+
+<div class="form-horizontal">
+    <form asp-controller="Register" asp-action="Register" method="post">
+        @if (ViewBag.Message != null)
+        {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+        }
+
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmailId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmailId" class="form-control" />
+                <span asp-validation-for="EmailId" class="text-danger"></span>
+            </div>
+        </div>
+      
+        <div class="form-group">
+            <label asp-for="Password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input  type="password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+       
+
+               
+
+         
+       
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
